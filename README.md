@@ -1,7 +1,7 @@
 # unslider.zh-CN
 [unslider.zh-CN](http://myvin.github.io/unslider.zh-CN)是对[unslider官方网站](http://unslider.com/)的英文文档根据自己理解制作的中文翻译文档手册：[unslider中文手册](http://myvin.github.io/unslider.zh-CN)。
 
-关于swig开源项目，请访问swig的[GitHub主页](https://github.com/idiot/unslider)。
+关于unslider开源项目，请访问unslider的[GitHub主页](https://github.com/idiot/unslider)。
 
 声明
 
