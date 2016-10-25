@@ -301,39 +301,39 @@
 						<p>Unslider automatically supports a few different scripts, provided the <code>&lt;script&gt;</code> tag is referenced <b>before Unslider</b>.</p>
 
 						<dl>
-							<dt>Right-to-left (RTL) support</dt>
+							<dt>Right-to-left (RTL) 支持</dt>
 							<dd>
-								<p>Just add <code>dir="rtl"</code> and Unslider will change the slide direction if needed.</p>
+								<p>添加 <code>dir="rtl"</code> Unslider将会改变轮播方向</p>
 
 								<pre>&lt;div class="my-slider" dir="rtl"&gt;&lt;/div&gt;</pre>
 							</dd>
 
-							<dt>Velocity.js <em><a href="http://julian.com/research/velocity/">visit site</a></em></dt>
+							<dt>Velocity.js <em><a href="http://julian.com/research/velocity/">访问站点</a></em></dt>
 							<dd>
-								<p>A faster alternative to jQuery's <code>.animate()</code>. If you find your sliders are looking a bit sluggish, it's highly recommended to add Velocity, as it can make a marked improvement.</p>
+								<p>一个使jQuery<code>.animate()</code>运行更快的插件。如果你的轮播运行的有些不流畅，强烈建议添加Velocity，因为Velocity能使动画效果显著提高。</p>
 
 								<pre>&lt;script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"&gt;&lt;/script&gt;</pre>
 							</dd>
 
-							<dt>jquery.swipe.js <em><a href="http://stephband.info/jquery.event.swipe">visit site</a></em></dt>
+							<dt>jquery.swipe.js <em><a href="http://stephband.info/jquery.event.swipe">访问站点</a></em></dt>
 							<dd>
-								<p>Add swipe support for mobile and desktop to your sliders. See the <code>initSwipe</code> and <code>destroySwipe</code> methods below for more info on how this works.</p>
+								<p>为你的轮播提供移动设备和桌面设备的滑动支持。查看下面的 <code>initSwipe</code> 和 <code>destroySwipe</code> 方法来了解它的运行机制。</p>
 
 								<pre>&lt;script src="//stephband.info/jquery.event.move/js/jquery.event.move.js"&gt;&lt;/script&gt;
 &lt;script src="//stephband.info/jquery.event.swipe/js/jquery.event.swipe.js"&gt;&lt;/script&gt;</pre>
 							</dd>
 						</dl>
 
-						<h2>Methods</h2>
-						<p>Unslider has a handful of methods you can use to control your slider and two ways you can use these methods, as shown below.</p>
-						<pre><span class="ghost">//  Assuming we've got a variable set like this...
+						<h2>方法</h2>
+						<p>Unslider有大量方法供你使用来控制你的轮播，你可以通过两种方式来使用这些方法，如下所示。</p>
+						<pre><span class="ghost">//  假设我们设置了一个这样的变量...
 var slider = $('.my-demo-slider').unslider();</span>
 
-<span class="ghost">// Method 1</span>
+<span class="ghost">// 方法 1</span>
 slider.data('unslider').methodName();
 slider.data('unslider').methodName('arguments', 'go', 'here');
 
-<span class="ghost">// Method 2 (the shorthand version)</span>
+<span class="ghost">// 方法 2 (速记法)</span>
 slider.unslider('methodName');
 slider.unslider('methodName:arguments,go,here');</pre>
 
@@ -342,26 +342,26 @@ slider.unslider('methodName:arguments,go,here');</pre>
 							<dd>Set everything up with the slider. This is called automatically when you set up <code>.unslider()</code> for the first time, but if there's layout problems or you want to re-initiate the slider for some reason, you can call it here. The <code>options</code> variable is an object (see below). <b>You can't call options with the shorthand <code>.unslider('init')</code> method.</b></dd>
 
 							<dt>calculateSlides</dt>
-							<dd>If a slide gets added or removed, you should call this otherwise things'll probably break.
+							<dd>如果添加或删除了一个幻灯片，则应该调用该方法，否则可能会出现异常。
 
 							<pre>var slider = $('.my-slider').unslider();
 
-<span class="ghost">// I don't like this last slide, let's get rid of it</span>
+<span class="ghost">// 看最后一个幻灯不顺眼，把它移除掉</span>
 slider.find('li:last').remove();
 
-<span class="ghost">// Let's recalculate Unslider so it knows what's going on</span>
+<span class="ghost">// 重新计算Unslider</span>
 slider.unslider('calculateSlides');
 </pre>
 							</dd>
 
 							<dt>start</dt>
-							<dd>Make the slider move itself between slides. Will use the options object to determine the delay between slides.</dd>
+							<dd>是每个滑块在幻灯片之间移动。可以设置 选项对象 来确定滑块移动的延时。</dd>
 
 							<dt>stop</dt>
-							<dd>Stop the slider moving itself between slides. Will stop any auto-playing.</dd>
+							<dd>停止滑块移动。自动播放也会停止。</dd>
 
 							<dt>destroyKeys</dt>
-							<dd>Remove any keyboard shortcut handlers for the slider.</dd>
+							<dd>移除键盘控制。</dd>
 
 							<dt>initKeys</dt>
 							<dd>Manually add keyboard shortcut support. Can be used after <code>destroyKeys</code> to restore keyboard shortcut support, or with <code>{keys: false}</code> in the options object to add support later on.</dd>
@@ -371,7 +371,7 @@ slider.unslider('calculateSlides');
 
 								<pre>$('.sliderman').unslider();
 
-<span class="ghost">//  Let's say we want to use $.getScript to load our scripts for some reason</span>
+<span class="ghost">//  假设因为某个原因我们使用 $.getScript 来加载脚本</span>
 var scripts = [
 	'http://stephband.info/jquery.event.move/js/jquery.event.move.js',
 	'http://stephband.info/jquery.event.swipe/js/jquery.event.swipe.js'
@@ -379,7 +379,7 @@ var scripts = [
 
 $.getScript(scripts[0]);
 
-<span class="ghost">//  Once our script is loaded, we can initSwipe to add swipe support</span>
+<span class="ghost">//  一旦加载了脚本，就可以初始化Unslider添加滑动支持</span>
 $.getScript(scripts[1], function() {
 	$('.sliderman').unslider('initSwipe');
 });
@@ -402,17 +402,17 @@ $.getScript(scripts[1], function() {
 								<pre><span class="ghost">//  Our trusty slider!</span>
 var slider = $('.slider').unslider();
 
-<span class="ghost">//  Move to the first slide</span>
+<span class="ghost">//  移动到第一个滑块</span>
 slider.unslider('animate:first');
 
-<span class="ghost">//  Move to the third slide</span>
-<span class="ghost">//  Remember, slides are zero-indexed so 0 is first slide, 1 is second, etc.</span>
+<span class="ghost">//  移动到第三个滑块</span>
+<span class="ghost">//  请注意，滑块索引是从0开始，即0是第一个滑块，1是第二个滑块，以此类推。</span>
 slider.unslider('animate:2');
 
-<span class="ghost">//  Move to the last slide</span>
+<span class="ghost">//  移动到最后一个滑块</span>
 slider.unslider('animate:last');
 
-<span class="ghost">//  Move to the last slide and add a direction</span>
+<span class="ghost">//  移动到最后一个滑块，并添加方向导航</span>
 slider.unslider('animate:last,prev');</pre>
 
 								<p>The argument <code>to</code> <b>is required</b> and can be an integer with the index of the slide you want to set (remember: indexes start at zero!), or the strings <code>'first'</code> or <code>'last'</code> if you don't know how many slides there are.</p>
@@ -420,16 +420,16 @@ slider.unslider('animate:last,prev');</pre>
 							</dd>
 
 							<dt>next</dt>
-							<dd>Manually move to the next slide (or the first slide if you reach the last slide).</dd>
+							<dd>手动移动到下一个滑块（如果现在是最后一个滑块，则移动到第一个滑块）</dd>
 
 							<dt>prev</dt>
-							<dd>Same thing as <code>.unslider('next')</code> but in the other direction. Moves the slider backwards manually or to the last slide if there's no more behind it.</dd>
+							<dd>除了移动方向相反，其他的和 <code>.unslider('next')</code> 相同。 Moves the slider backwards manually or to the last slide if there's no more behind it.</dd>
 						</dl>
 
-						<h2>Events</h2>
-						<p>Unslider triggers some event listeners which might be handy for whatever reason, I guess.</p>
+						<h2>事件</h2>
+						<p>Unslider提供了事件监听器，也许这会在某些方面给我们提供一些便利。</p>
 
-						<pre><span class="ghost">//  Set up our slider to automatically move every second so we can see what's happening</span>
+						<pre><span class="ghost">//  设置轮播自动播放，滑动时间间隔为1s，这样有利于我们观察</span>
 var slider = $('.slider').unslider({ autoplay: true, delay: 1000 });
 
 <span class="ghost">//  When the slider has been set up, fire the event off.</span>
@@ -437,12 +437,12 @@ slider.on('unslider.ready', function() {
 	alert('Slider is set up!');
 });
 
-<span class="ghost">//  Listen to slide changes</span>
+<span class="ghost">//  监听滑动变化事件</span>
 slider.on('unslider.change', function(event, index, slide) {
 	alert('Slide has been changed to ' + index);
 });</pre>
 
-						<h2>Options</h2>
+						<h2>选项</h2>
 						<p>Unslider uses a standard jQuery plugin options object, which looks like the highlighted example below:</p>
 
 						<pre><span class="ghost">$('.my-demo-slider').unslider(</span>{
@@ -454,16 +454,16 @@ slider.on('unslider.change', function(event, index, slide) {
 						
 						<dl>
 							<dt>autoplay <em>default: <code>false</code></em></dt>
-							<dd>Should the slider move by itself or only be triggered manually?</dd>
+							<dd>是否自动播放？</dd>
 
 							<dt>speed <em>default: <code>750</code></em></dt>
-							<dd>How fast (in milliseconds) Unslider should animate between slides.</dd>
+							<dd>滑块速度（单位：ms）。</dd>
 
 							<dt>delay <em>default: <code>3000</code></em></dt>
-							<dd>If <code>autoplay</code> is set to true, how many milliseconds should pass between moving the slides?</dd>
+							<dd>如果 <code>autoplay</code> 设置为true，则该选项为两个滑块滑动的时间间隔（单位：ms）。</dd>
 							
 							<dt>index <em>default: <code>'first'</code></em></dt>
-							<dd>If this is set to an integer, <code>'first'</code> or <code>'last'</code>, it'll set the default slide to that position rather than the first slide.</dd>
+							<dd>如果设置为整数、 <code>'first'</code> 或 <code>'last'</code>，轮播滑块的默认索引将变为该设置项的值，而不是第一个滑块。</dd>
 
 							<dt>keys <em>default: <code>true</code></em></dt>
 							<dd>Do you want to add keyboard shortcut support to Unslider? This can be set to either <code>true</code>, <code>false</code>, or an options/keycode object, like so:
@@ -473,7 +473,7 @@ slider.on('unslider.change', function(event, index, slide) {
 	next: 39,
 	stop: 27 <span class="ghost">//  Example: pause when the Esc key is hit</span>
 }</pre>
-								This can be useful if you want to extend the functionality built-in to Unslider.
+								这回有利于你扩展Unslider的内置函数。
 							</dd>
 
 							<dt>nav <em>default: <code>true</code></em></dt>
@@ -493,34 +493,34 @@ slider.on('unslider.change', function(event, index, slide) {
 		return label + ' third slide!';
 	}
 
-	<span class="ghost">//  Only show the number</span>
+	<span class="ghost">//  只显示数字</span>
 	return index + 1;
 }</pre>
 							</dd>
 
 							<dt>arrows <em>default: <code>true</code></em></dt>
 							<dd>
-								<p>Do you want to add left/right arrows to your slider? You can style these in your CSS by writing rules for <code>.unslider-arrow</code> (or alternatively you can change the HTML string to whatever you like and style that).</p>
-								<p>This can be set to either <code>true</code>, <code>false</code>, or an options object. If you set an options object, the default behaviour will be overwritten. The default object looks like this:</p>
+								<p>想为轮播添加 左/右 箭头么？You can style these in your CSS by writing rules for <code>.unslider-arrow</code> (or alternatively you can change the HTML string to whatever you like and style that).</p>
+								<p>该选项可以设置为 <code>true</code> 或 <code>false</code>，或者是一个对象。如果设置为一个对象，则默认的设置会被覆盖。默认的对象是这个样子的：</p>
 
 								<pre>arrows: {
-	<span class="ghost">//  Unslider default behaviour</span>
+	<span class="ghost">//  Unslider默认行为</span>
 	prev: '&lt;a class="unslider-arrow prev"&gt;Previous slide&lt;/a&gt;',
 	next: '&lt;a class="unslider-arrow next"&gt;Next slide&lt;/a&gt;',
 
-	<span class="ghost">//  Example: generate buttons to start/stop the slider autoplaying</span>
+	<span class="ghost">//  例子：生成 start/stop 按钮来控制自动播放</span>
 	stop: '&lt;a class="unslider-pause" /&gt;',
 	start: '&lt;a class="unslider-play"&gt;Play&lt;/a&gt;'
 }</pre>
-								<p>This option is a bit of a misnomer, as you can set it to generate anything, not just arrows.</p>
+								<p>该选项可能会产生一些误解，你可以设置成生成任何东西，而不仅仅是箭头。</p>
 							</dd>
 
 							<dt>animation <em>default: <code>'horizontal'</code></em></dt>
-							<dd>How should Unslider animate each slide? Right now, there's three different animation types:
+							<dd>滑块在滑动过程中展现什么动画呢？目前有三种动画类型：
 								<ol>
-									<li><code>'horizontal'</code>, which moves the slides from left-to-right</li>
-									<li><code>'vertical'</code>, which moves the slides from top-to-bottom</li>
-									<li><code>'fade'</code>, which crossfades slides</li>
+									<li><code>'horizontal'</code>, 从左到右滑动</li>
+									<li><code>'vertical'</code>, 从上到下滑动</li>
+									<li><code>'fade'</code>, 交叉淡入淡出</li>
 								</ol>
 							</dd>
 
@@ -539,7 +539,7 @@ slider.on('unslider.change', function(event, index, slide) {
 							<dd>Should Unslider animate the height of the container to match the current slide's height? If so, set to <code>true</code>.</dd>
 
 							<dt>activeClass <em>default:<br><code>'unslider-active'</code></em></dt>
-							<dd>What class should Unslider set to the active slides and navigation items? Use this if you want to match your CSS.</dd>
+							<dd>Unslider为活动的滑块设置的类。你可以设置该选项来匹配自己的样式。</dd>
 						</dl>
 					</div></div>
 				</li>
@@ -547,7 +547,7 @@ slider.on('unslider.change', function(event, index, slide) {
 				<li id="download" data-nav="下载，编译 <span class='amp'>&amp;</span> 贡献代码">
 					<div class="wrap vertical">
 						<h1>下载Unslider</h1>
-						<p>可以通过Github来获取最新版本的开源的Unsider。任何链接都可能会过期，所以请确保最新的下载版本！</p>
+						<p>可以通过Github来获取最新版本的开源的Unsider。任何链接都可能会过期，所以请确保下载最新的版本！</p>
 						<a class="btn big" href="http://github.com/idiot/unslider/archive/master.zip">Download <span>unslider.min.js, 5.6kb</span></a>
 						<a class="btn big primary" href="http://github.com/idiot/unslider">在Github上查看</a>
 						
