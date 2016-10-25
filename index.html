@@ -325,7 +325,7 @@
 						</dl>
 
 						<h2>方法</h2>
-						<p>Unslider有大量方法供你使用来控制你的轮播，你可以通过两种方式来使用这些方法，如下所示。</p>
+						<p>Unslider有大量方法供你使用来控制轮播，你可以通过两种方式来使用这些方法，如下所示。</p>
 						<pre><span class="ghost">//  假设我们设置了一个这样的变量...
 var slider = $('.my-demo-slider').unslider();</span>
 
@@ -342,7 +342,7 @@ slider.unslider('methodName:arguments,go,here');</pre>
 							<dd>Set everything up with the slider. This is called automatically when you set up <code>.unslider()</code> for the first time, but if there's layout problems or you want to re-initiate the slider for some reason, you can call it here. The <code>options</code> variable is an object (see below). <b>You can't call options with the shorthand <code>.unslider('init')</code> method.</b></dd>
 
 							<dt>calculateSlides</dt>
-							<dd>如果添加或删除了一个幻灯片，则应该调用该方法，否则可能会出现异常。
+							<dd>如果添加或删除了一个滑块，则应该调用该方法，否则可能会出现异常。
 
 							<pre>var slider = $('.my-slider').unslider();
 
@@ -364,10 +364,10 @@ slider.unslider('calculateSlides');
 							<dd>移除键盘控制。</dd>
 
 							<dt>initKeys</dt>
-							<dd>Manually add keyboard shortcut support. Can be used after <code>destroyKeys</code> to restore keyboard shortcut support, or with <code>{keys: false}</code> in the options object to add support later on.</dd>
+							<dd>添加键盘按键支持。可以用在 <code>destroyKeys</code> 之后来重新设置键盘支持，或者在设置对象中设置 <code>{keys: false}</code> 以备之后开启键盘支持。</dd>
 
 							<dt>initSwipe</dt>
-							<dd>Set up swipe functionality manually (i.e if you want to defer loading). You can add it automatically by including <a href="http://stephband.info/jquery.event.swipe/">jquery.event.move and jquery.event.swipe</a> in your code. If you need to add it after page load, you can call initSwipe, like so:
+							<dd>Set up swipe functionality manually (比如，你想延迟加载)。 You can add it automatically by including <a href="http://stephband.info/jquery.event.swipe/">jquery.event.move and jquery.event.swipe</a> in your code. 如果你需要在页面加载之后添加，则可以像这样调用 initSwipe：
 
 								<pre>$('.sliderman').unslider();
 
@@ -387,12 +387,12 @@ $.getScript(scripts[1], function() {
 							</dd>
 
 							<dt>destroySwipe</dt>
-							<dd>Remove swipe support. Does what it says on the tin.</dd>
+							<dd>移除swipe支持。Does what it says on the tin.</dd>
 
 							<dt>setIndex <em>args: <code>to</code></em></dt>
 							<dd>
-								<p>Set the current index and navigation for Unslider. <b>This doesn't move the slider!</b> You can get some goofy results doing this - if you want to move the slider to a specific slide, I'd recommend you use <code>animate()</code> instead.</p>
-								<p>The argument <code>to</code> can be an integer with the index of the slide you want to set (remember: indexes start at zero!), or the strings <code>'first'</code> or <code>'last'</code> if you don't know how many slides there are.</p>
+								<p>为Unslider设置当前索引和导航。<b>这并不会移除slider！</b> 如果你想将slider移动到某个特定的滑块，使用该方法可能会得到一些糟糕的结果，我推荐你使用 <code>animate()</code> 来实现。</p>
+								<p>参数 <code>to</code> 是你想移动到的索引（记住：索引从0开始），如果你不知道总共有多少个滑块，可以使用字符串 <code>'first'</code> 或者 <code>'last'</code>。</p>
 							</dd>
 
 							<dt>animate <em>args: <code>to</code>, <code>dir</code></em></dt>
@@ -415,8 +415,8 @@ slider.unslider('animate:last');
 <span class="ghost">//  移动到最后一个滑块，并添加方向导航</span>
 slider.unslider('animate:last,prev');</pre>
 
-								<p>The argument <code>to</code> <b>is required</b> and can be an integer with the index of the slide you want to set (remember: indexes start at zero!), or the strings <code>'first'</code> or <code>'last'</code> if you don't know how many slides there are.</p>
-								<p>The argument <code>dir</code> <b>is optional</b> and can either be the string <code>'prev'</code> or <code>'next'</code>. This doesn't do anything, yet.</p>
+								<p>参数 <code>to</code> <b>是必选项，</b> 是你想移动到的索引（记住：索引从0开始），如果你不知道总共有多少个滑块，可以使用字符串 <code>'first'</code> 或者 <code>'last'</code>。</p>
+								<p>参数 <code>dir</code> <b>是可选项，</b> 可以是字符串 <code>'prev'</code> 或者 <code>'next'</code>。This doesn't do anything, yet.</p>
 							</dd>
 
 							<dt>next</dt>
@@ -443,14 +443,14 @@ slider.on('unslider.change', function(event, index, slide) {
 });</pre>
 
 						<h2>选项</h2>
-						<p>Unslider uses a standard jQuery plugin options object, which looks like the highlighted example below:</p>
+						<p>Unslider使用的是标准的jQuery插件选项对象，它看起来像下面高亮的例子：</p>
 
 						<pre><span class="ghost">$('.my-demo-slider').unslider(</span>{
 	settingName: settingValue,
 	anotherSetting: anotherValue
 }<span class="ghost">);</span></pre>
 
-						<p>It's not required to have any of these options set — you can leave these all blank and they'll fall back to the defaults highlighted in the table below.</p>
+						<p>这些选项如果不设置的话，Unslider会使用下表所示的高亮默认值。</p>
 						
 						<dl>
 							<dt>autoplay <em>default: <code>false</code></em></dt>
@@ -466,14 +466,14 @@ slider.on('unslider.change', function(event, index, slide) {
 							<dd>如果设置为整数、 <code>'first'</code> 或 <code>'last'</code>，轮播滑块的默认索引将变为该设置项的值，而不是第一个滑块。</dd>
 
 							<dt>keys <em>default: <code>true</code></em></dt>
-							<dd>Do you want to add keyboard shortcut support to Unslider? This can be set to either <code>true</code>, <code>false</code>, or an options/keycode object, like so:
+							<dd>想为Unslider添加键盘按键支持么？可以通过设置 <code>true</code>、 <code>false</code>，或一个 options/keycode 对象来实现，就像这样：
 
 								<pre>keys: {
 	prev: 37,
 	next: 39,
-	stop: 27 <span class="ghost">//  Example: pause when the Esc key is hit</span>
+	stop: 27 <span class="ghost">//  例子：按下 Esc 暂停</span>
 }</pre>
-								这回有利于你扩展Unslider的内置函数。
+								这将有利于你扩展Unslider的内置函数。
 							</dd>
 
 							<dt>nav <em>default: <code>true</code></em></dt>
@@ -484,9 +484,9 @@ slider.on('unslider.change', function(event, index, slide) {
 								<p><span class="new">New</span> You can also provide a function to calculate the slide label:</p>
 
 								<pre>nav: function(index, label) {
-	<span class="ghost">//  $(this) is the current index slide</span>
-	<span class="ghost">//  label is the current label</span>
-	<span class="ghost">//  index is the slide index, starting at 0</span>
+	<span class="ghost">//  $(this)是当前滑块</span>
+	<span class="ghost">//  label是当前的label</span>
+	<span class="ghost">//  index是从0开始的滑块索引</span>
 
 	<span class="ghost">//  On the third slide, append " third slide!"</span>
 	if(index === 2) {
