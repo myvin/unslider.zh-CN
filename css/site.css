@@ -343,7 +343,7 @@ nav, .unslider-nav {
 				top: 130%;
 			}
 		nav a[href="#welcome"]:after {
-			content: 'beta';
+			content: '测试版';
 			position: absolute;
 			left: 0;
 			right: 10px;
